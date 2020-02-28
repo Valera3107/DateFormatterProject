@@ -3,7 +3,6 @@ package ua.com.DateApplication.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
 import ua.com.DateApplication.service.DateService;
@@ -32,7 +31,10 @@ public class DateController {
     dateService.dateConversion(stringDate);
   }
 
-  public void runFileDates(String fileName) {
+  public void runFileDates() {
+    log.info("Input file name/path: (example dates.txt)");
+    Scanner sc = new Scanner(System.in);
+    String fileName = sc.nextLine();
     log.info("Read from " + fileName + " information about the dates;");
     BufferedReader reader;
     try {
