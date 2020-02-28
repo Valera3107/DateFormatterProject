@@ -1,7 +1,8 @@
 package ua.com.DateApplication.controller;
 
-//import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.annotation.Validated;
@@ -16,20 +17,23 @@ import java.util.Scanner;
 @Component
 public class DateController {
 
-//  private static final Logger log = LoggerFactory.getLogger(DateServiceImpl.class);
+  private static final Logger log = LoggerFactory.getLogger(DateController.class);
 
-  @Autowired
-  private DateService dateService;
+  private final DateService dateService;
+
+  public DateController(DateService dateService) {
+    this.dateService = dateService;
+  }
 
   public void runConsole() {
-//    log.info("Input two dates with the next format: DD MM YYYY, DD MM YYYY");
+    log.info("Input two dates with the next format: DD MM YYYY, DD MM YYYY");
     Scanner sc = new Scanner(System.in);
     String stringDate = sc.nextLine();
     dateService.dateConversion(stringDate);
   }
 
   public void runFileDates(String fileName) {
-//    log.info("Read from " + fileName + " information about the dates;");
+    log.info("Read from " + fileName + " information about the dates;");
     BufferedReader reader;
     try {
       reader = new BufferedReader(new FileReader(
@@ -41,7 +45,7 @@ public class DateController {
       }
       reader.close();
     } catch (IOException e) {
-//      log.error("Can not open " + fileName + ";");
+      log.error("Can not open " + fileName + ";");
     }
   }
 
