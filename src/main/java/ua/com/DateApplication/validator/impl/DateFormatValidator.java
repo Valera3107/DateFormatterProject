@@ -17,7 +17,7 @@ public class DateFormatValidator implements ConstraintValidator<ValidDate, Integ
 
   private boolean validateDateInput(Integer day, Integer month, Integer year) {
     Month monthConst;
-    if (year % 4 == 0 && month == 2 && day == 29) {
+    if (year != 1900 && year % 4 == 0 && month == 2 && day == 29) {
       return true;
     }
     return year >= 1900 && year <= 2010
