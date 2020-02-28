@@ -35,7 +35,7 @@ public class DateController {
     log.info("Input file name/path: (example dates.txt)");
     Scanner sc = new Scanner(System.in);
     String fileName = sc.nextLine();
-    log.info("Read from " + fileName + " information about the dates;");
+    log.info("Read from {} information about the dates;", fileName);
     BufferedReader reader;
     try {
       reader = new BufferedReader(new FileReader(
@@ -47,7 +47,7 @@ public class DateController {
       }
       reader.close();
     } catch (IOException e) {
-      log.error("Can not open " + fileName + ";");
+      log.error("Can not open {};", fileName);
     }
   }
 

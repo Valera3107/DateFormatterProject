@@ -21,8 +21,7 @@ public class Workflow {
 
   @PostConstruct
   public void run(){
-    log.info("1 - run application via console input;" +
-      "\n2 - run application via file reading;");
+    log.info("1 - run application via console input;\n2 - run application via file reading;");
 
     Scanner sc = new Scanner(System.in);
     int choice = sc.nextInt();

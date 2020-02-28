@@ -26,9 +26,9 @@ public class DateServiceImpl implements DateService {
       String text = "12 05 2000, 08 04 1909\n02 10 2009, 01 07 1945\n11 02 1987, 23 05 1999";
       writer.write(text);
       writer.flush();
-      log.info("Wrote to the " + fileName + " file three pairs of the date;");
+      log.info("Wrote to the {} file three pairs of the date;", fileName);
     } catch (IOException ex) {
-      log.error("Can not write to " + fileName + ";");
+      log.error("Can not write to {};", fileName);
     }
   }
 
